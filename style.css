@@ -946,10 +946,15 @@ td a:hover { color: var(--accent-light); }
 }
 
 /* ═══════════════════════════════════════════════
-   موبایل — با اصلاحات کامل RTL
+   موبایل — با اصلاحات کامل RTL + غیرفعال کردن Intro
    ═══════════════════════════════════════════════ */
 
 @media (max-width: 900px) {
+
+  /* ═══ غیرفعال کردن Intro در موبایل ═══ */
+  .intro-screen {
+    display: none !important;
+  }
 
   body {
     display: block;
@@ -1166,42 +1171,6 @@ td a:hover { color: var(--accent-light); }
     font-size: 0.65rem;
   }
 
-  /* ==== صفحه ورودی ==== */
-  .intro-content { padding: 0 20px; }
-
-  .intro-title {
-    font-size: 1.4rem;
-    margin-bottom: 30px;
-  }
-
-  .intro-tag {
-    font-size: 0.7rem;
-    letter-spacing: 3px;
-    padding: 5px 14px;
-    margin-bottom: 20px;
-  }
-
-  .intro-members { gap: 6px; }
-
-  .intro-chip {
-    font-size: 0.7rem;
-    padding: 5px 12px;
-  }
-
-  .intro-halo {
-    width: 320px;
-    height: 320px;
-    margin-top: -160px;
-    margin-left: -160px;
-  }
-
-  .intro-halo::after {
-    width: 160px;
-    height: 160px;
-    margin-top: -80px;
-    margin-left: -80px;
-  }
-
   /* ==== فوتر ==== */
   .foot {
     flex-direction: column;
@@ -1224,26 +1193,11 @@ td a:hover { color: var(--accent-light); }
   .abs-col p { font-size: 0.78rem; }
 
   .team-grid { grid-template-columns: 1fr; }
-
-  .intro-title { font-size: 1.1rem; }
-  .intro-chip {
-    font-size: 0.65rem;
-    padding: 4px 10px;
-  }
-
-  .intro-halo {
-    width: 250px; height: 250px;
-    margin-top: -125px; margin-left: -125px;
-  }
 }
 
 /* ═══ iOS Safari fixes ═══ */
 @supports (-webkit-touch-callout: none) {
   body {
     min-height: -webkit-fill-available;
-  }
-  .intro-screen {
-    height: 100vh;
-    height: -webkit-fill-available;
   }
 }
